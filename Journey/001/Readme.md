@@ -92,3 +92,5 @@ Fokus pada kemampuan teknis
 1. Platfrom
 2. Keamanan
 3. Pengoperasian
+
+![image](https://github.com/yayancandrakurniawan/100DaysOfCloud/assets/125896097/b0b5cbeb-9a10-4ec6-8c22-ec4897043817)
