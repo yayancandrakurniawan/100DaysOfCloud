@@ -146,6 +146,7 @@ Paket Basic Support tidak termasuk dukungan kasus, sementara tingkatan keparahan
 - Infrastruktur Global AWS
 - Ikhtisar layanan AWS dan kategori layanan
 
+## Modul 3
 
 ## Bagian 1: Infrastruktur Global AWS
 
