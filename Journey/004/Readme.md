@@ -1,52 +1,33 @@
-**Add a cover photo like:**
-![placeholder image](https://via.placeholder.com/1200x600)
+## CHAPTER 4 MODUL 4 
 
-# New post title here
+## Modul 4: Keamanan AWS Cloud
 
-## Introduction
+Keamanan AWS Cloud.Keamanan adalah prioritas tertinggi di Amazon Web Services (AWS). AWS memberikan lingkungan komputasi cloud terukur yang dirancang untuk ketersediaan dan ketergantungan tinggi, sambil menyediakan tool yang memungkinkan Anda menjalankan berbagai aplikasi. Membantu melindungi kerahasiaan, integritas, dan ketersediaan sistem dan data Anda sangat penting bagi AWS, begitu pun dengan menjaga kepercayaan pelanggan.
 
-✍️ (Why) Explain in one or two sentences why you choose to do this project or cloud topic for your day's study.
+## Modul ini akan membahas topik-topik berikut:
+- Model tanggung jawab bersama AWS
+- AWS Identity and Access Management (IAM)
+- Mengamankan akun AWS baru•Mengamankan akun
+- Mengamankan data di AWS
+- Berupaya Memastikan Kepatuhan
+- Layanan keamanan dan sumber daya tambahan
 
-## Prerequisite
+## Bagian 1: Model tanggung jawab bersama AWS
 
-✍️ (What) Explain in one or two sentences the base knowledge a reader would need before describing the the details of the cloud service or topic.
+Keamanan dan kepatuhan merupakan tanggung jawab bersama antara AWS dan pelanggan. AWS bertanggung jawab melindungi infrastruktur yang menjalankan semua layanan yang ditawarkan di AWS Cloud. Infrastruktur ini terdiri atas perangkat keras, perangkat lunak, jaringan, dan fasilitas yang menjalankan layanan AWS Cloud. Sedangkan, Pelanggan bertanggung jawab atas enkripsi data saat istirahat dan data dalam transit. Pelanggan juga harus memastikan bahwa jaringan dikonfigurasi untuk keamanan dan kredensial keamanan dan login dikelola dengan aman.
 
-## Use Case
+AWS bertanggung jawab atas keamanan dari cloud. Jadi, AWS bertanggung jawab atas infrastruktur fisik yang menyediakan sumber daya Anda, termasuk:
+- Keamanan fisik pusat data
+- Infrastruktur perangkat keras
+- Infrastruktur perangkat lunak
+- infrasrtuktur jaringan
 
-- 🖼️ (Show-Me) Create an graphic or diagram that illustrate the use-case of how this knowledge could be applied to real-world project
-- ✍️ (Show-Me) Explain in one or two sentences the use case
+Pelanggan bertanggung jawab atas apa yang dilaksanakan dengan menggunakan layanan AWS dan untuk aplikasi yang terhubung ke AWS. Jadi,  Pelanggan bertanggung jawab mengelola persyaratan keamanan konten sensitif, termasuk:
+- Konten yang pelanggan pilih untuk disimpan di AWS
+- Layanan AWS yang digunakan bersama konten
+- Di negara mana konten tersebut disimpan Format dan struktur dari konten tersebut, serta apakah konten tersebut disembunyikan, dianonimkan, atau dienkripsi
+- Pelanggan yang memiliki akses ke konten tersebut serta bagaimana akses itu diberikan, dikelola, dan ditarik kembali
 
-## Cloud Research
+Jadi, siapa yang bertanggung jawab untuk menjaga keamanan? AWS atau pelanggan? jawabannya ialah semua pihak bertanggung jawab dan saling melengkapi.
 
-- ✍️ Document your trial and errors. Share what you tried to learn and understand about the cloud topic or while completing micro-project.
-- 🖼️ Show as many screenshot as possible so others can experience in your cloud research.
-
-## Try yourself
-
-✍️ Add a mini tutorial to encourage the reader to get started learning something new about the cloud.
-
-### Step 1 — Summary of Step
-
-![Screenshot](https://via.placeholder.com/500x300)
-
-### Step 1 — Summary of Step
-
-![Screenshot](https://via.placeholder.com/500x300)
-
-### Step 3 — Summary of Step
-
-![Screenshot](https://via.placeholder.com/500x300)
-
-## ☁️ Cloud Outcome
-
-✍️ (Result) Describe your personal outcome, and lessons learned.
-
-## Next Steps
-
-✍️ Describe what you think you think you want to do next.
-
-## Social Proof
-
-✍️ Show that you shared your process on Twitter or LinkedIn
-
-[link](link)
+## Bagian 2: AWS Identity and Access Management (atau IAM)
