@@ -31,3 +31,52 @@ Pelanggan bertanggung jawab atas apa yang dilaksanakan dengan menggunakan layana
 Jadi, siapa yang bertanggung jawab untuk menjaga keamanan? AWS atau pelanggan? jawabannya ialah semua pihak bertanggung jawab dan saling melengkapi.
 
 ## Bagian 2: AWS Identity and Access Management (atau IAM)
+
+AWS Identity and Access Management (IAM)memungkinkan Anda mengontrol akses ke komputasi, penyimpanan, basis data, dan layanan aplikasi di AWS Cloud. IAM adalah alat yang secara terpusat mengelola akses untuk meluncurkan, mengonfigurasi, mengelola, dan mengakhiri sumber daya di akun AWS Anda. IAM adalah fitur akun AWS yang ditawarkan tanpa biaya tambahan.
+
+**Pengguna IAM** adalah orang atau aplikasi yang ditentukan dalam akun AWS, dan harus membuat panggilan API ke produk AWS. 
+Autentikasi adalah konsep keamanan komputer dasar pengguna atau sistem harus terlebih dahulu membuktikan identitas mereka. JIka anda menentukan pengguna IAM. Anda memilih jenis akses yang diizinkan pengguna untuk digunakan. Ada dua jenis autentikasi untuk mendapatkan akses:
+- Akses program
+  - Autentikasi menggunakan :
+      - Access key ID
+      - Secret access key
+  - Menyediakan akses WS CLI dan AWS SDK
+- Akses AWS Management Console
+  - Autentikasi menggunakan :
+      - ID akun 12 digit atau alias 
+      - nama pengguna dan kata sandi IAM
+  - Jika otentikasi multifaktor (MFA) diaktifkan untuk pengguna, mereka juga akan dimintai kode autentikasi.
+
+**Grup IAM** adalah pengguna IAM. Anda dapat menggunakan grup IAM umtuk menyederhanakan penentuan dan pengelolaan izin untuk beberapa pengguna. 
+
+Karakteristik penting dari grup IAM:
+- Sebuah grup dapat berisi banyak pengguna, dan pengguna dapat menjadi milik beberapa grup.
+- Grup tidak dapat ditumpuk. Grup hanya dapat berisi pengguna, dan grup tidak dapat berisi grup lain.
+- Tidak ada grup default yang secara otomatis mencakup semua pengguna di akun AWS. Jika Anda ingin memiliki  grup dengan semua pengguna akun di dalamnya, Anda perlu membuat grup dan menambahkan setiap pengguna baru ke dalamnya
+
+**Kebijakan IAM** adalah dokumen yang menetapkan izin untuk menentukan apa yang dapat dilakukan pengguna di akun AWS. 
+
+Terdapat dua jenis kebijakan IAM:
+- Kebijakan berbasis identitas
+  
+  Kebijakan berbasis identitas dapat dikategorikan lebih lanjut sebagai:
+  - Kebijakan terkelola –Kebijakan berbasis identitas yang mandiri yang dapat Anda lampirkan pada beberapa pengguna, grup, dan peran dalam akun AWS Anda
+  - Kebijakan inline –Kebijakan yang Anda buat dan kelola, dan yang tertanam secara langsung dalam grup atau peran pengguna tunggal
+- Kebijakan berbasis sumber daya
+
+  Kebijakan berbasis sumber daya adalah dokumen kebijakan JSON yang Anda lampirkan pada sumber daya, seperti bucket Amazon S3. Kebijakan ini mengatur tindakan apa yang dapat dilakukan pelaku tertentu pada sumber daya tersebut, dan dalam kondisi apa
+ 
+**IAM role** adalah alat untuk memberikan akses sementara ke sumber daya AWS tertentu dalam akun AWS.
+
+## Bagian 3 Mengamankan akun AWS baru
+
+Ada beberapa cara terbaik untuk mengamankan akun AWS. Berikut beberapa cara-caranya:
+- Amankan login dengan otentikasi multifaktor (MFA)
+- Hapus access key pengguna root akun
+- Membuat pengguna IAM individu dan memberikan izin sesuai dengan prinsip hak istimewa paling minim
+- Gunakan grup untuk menetapkan izin kepada pengguna IAM
+- Mengkonfigurasi kata sandi yang kuat
+- Delegasikan penggunaan peran, alih-alih pembagian kredensian
+- memantau aktifitas akun menggunakan AWS Cloud Trail
+
+## Bagian 4 
