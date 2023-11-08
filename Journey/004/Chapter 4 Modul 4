@@ -1,0 +1,127 @@
+## CHAPTER 4 MODUL 4 
+
+## Modul 4: Keamanan AWS Cloud
+
+Keamanan AWS Cloud.Keamanan adalah prioritas tertinggi di Amazon Web Services (AWS). AWS memberikan lingkungan komputasi cloud terukur yang dirancang untuk ketersediaan dan ketergantungan tinggi, sambil menyediakan tool yang memungkinkan Anda menjalankan berbagai aplikasi. Membantu melindungi kerahasiaan, integritas, dan ketersediaan sistem dan data Anda sangat penting bagi AWS, begitu pun dengan menjaga kepercayaan pelanggan.
+
+## Modul ini akan membahas topik-topik berikut:
+- Model tanggung jawab bersama AWS
+- AWS Identity and Access Management (IAM)
+- Mengamankan akun AWS baru•Mengamankan akun
+- Mengamankan data di AWS
+- Berupaya Memastikan Kepatuhan
+- Layanan keamanan dan sumber daya tambahan
+
+## Bagian 1: Model tanggung jawab bersama AWS
+
+Keamanan dan kepatuhan merupakan tanggung jawab bersama antara AWS dan pelanggan. AWS bertanggung jawab melindungi infrastruktur yang menjalankan semua layanan yang ditawarkan di AWS Cloud. Infrastruktur ini terdiri atas perangkat keras, perangkat lunak, jaringan, dan fasilitas yang menjalankan layanan AWS Cloud. Sedangkan, Pelanggan bertanggung jawab atas enkripsi data saat istirahat dan data dalam transit. Pelanggan juga harus memastikan bahwa jaringan dikonfigurasi untuk keamanan dan kredensial keamanan dan login dikelola dengan aman.
+
+AWS bertanggung jawab atas keamanan dari cloud. Jadi, AWS bertanggung jawab atas infrastruktur fisik yang menyediakan sumber daya Anda, termasuk:
+- Keamanan fisik pusat data
+- Infrastruktur perangkat keras
+- Infrastruktur perangkat lunak
+- infrasrtuktur jaringan
+
+Pelanggan bertanggung jawab atas apa yang dilaksanakan dengan menggunakan layanan AWS dan untuk aplikasi yang terhubung ke AWS. Jadi,  Pelanggan bertanggung jawab mengelola persyaratan keamanan konten sensitif, termasuk:
+- Konten yang pelanggan pilih untuk disimpan di AWS
+- Layanan AWS yang digunakan bersama konten
+- Di negara mana konten tersebut disimpan Format dan struktur dari konten tersebut, serta apakah konten tersebut disembunyikan, dianonimkan, atau dienkripsi
+- Pelanggan yang memiliki akses ke konten tersebut serta bagaimana akses itu diberikan, dikelola, dan ditarik kembali
+
+Jadi, siapa yang bertanggung jawab untuk menjaga keamanan? AWS atau pelanggan? jawabannya ialah semua pihak bertanggung jawab dan saling melengkapi.
+
+## Bagian 2: AWS Identity and Access Management (atau IAM)
+
+AWS Identity and Access Management (IAM)memungkinkan Anda mengontrol akses ke komputasi, penyimpanan, basis data, dan layanan aplikasi di AWS Cloud. IAM adalah alat yang secara terpusat mengelola akses untuk meluncurkan, mengonfigurasi, mengelola, dan mengakhiri sumber daya di akun AWS Anda. IAM adalah fitur akun AWS yang ditawarkan tanpa biaya tambahan.
+
+**Pengguna IAM** adalah orang atau aplikasi yang ditentukan dalam akun AWS, dan harus membuat panggilan API ke produk AWS. 
+Autentikasi adalah konsep keamanan komputer dasar pengguna atau sistem harus terlebih dahulu membuktikan identitas mereka. JIka anda menentukan pengguna IAM. Anda memilih jenis akses yang diizinkan pengguna untuk digunakan. Ada dua jenis autentikasi untuk mendapatkan akses:
+- Akses program
+  - Autentikasi menggunakan :
+      - Access key ID
+      - Secret access key
+  - Menyediakan akses WS CLI dan AWS SDK
+- Akses AWS Management Console
+  - Autentikasi menggunakan :
+      - ID akun 12 digit atau alias 
+      - nama pengguna dan kata sandi IAM
+  - Jika otentikasi multifaktor (MFA) diaktifkan untuk pengguna, mereka juga akan dimintai kode autentikasi.
+
+**Grup IAM** adalah pengguna IAM. Anda dapat menggunakan grup IAM umtuk menyederhanakan penentuan dan pengelolaan izin untuk beberapa pengguna. 
+
+Karakteristik penting dari grup IAM:
+- Sebuah grup dapat berisi banyak pengguna, dan pengguna dapat menjadi milik beberapa grup.
+- Grup tidak dapat ditumpuk. Grup hanya dapat berisi pengguna, dan grup tidak dapat berisi grup lain.
+- Tidak ada grup default yang secara otomatis mencakup semua pengguna di akun AWS. Jika Anda ingin memiliki  grup dengan semua pengguna akun di dalamnya, Anda perlu membuat grup dan menambahkan setiap pengguna baru ke dalamnya
+
+**Kebijakan IAM** adalah dokumen yang menetapkan izin untuk menentukan apa yang dapat dilakukan pengguna di akun AWS. 
+
+Terdapat dua jenis kebijakan IAM:
+- Kebijakan berbasis identitas
+  
+  Kebijakan berbasis identitas dapat dikategorikan lebih lanjut sebagai:
+  - Kebijakan terkelola –Kebijakan berbasis identitas yang mandiri yang dapat Anda lampirkan pada beberapa pengguna, grup, dan peran dalam akun AWS Anda
+  - Kebijakan inline –Kebijakan yang Anda buat dan kelola, dan yang tertanam secara langsung dalam grup atau peran pengguna tunggal
+- Kebijakan berbasis sumber daya
+
+  Kebijakan berbasis sumber daya adalah dokumen kebijakan JSON yang Anda lampirkan pada sumber daya, seperti bucket Amazon S3. Kebijakan ini mengatur tindakan apa yang dapat dilakukan pelaku tertentu pada sumber daya tersebut, dan dalam kondisi apa
+ 
+**IAM role** adalah alat untuk memberikan akses sementara ke sumber daya AWS tertentu dalam akun AWS.
+
+## Bagian 3: Mengamankan akun AWS baru
+
+Ada beberapa cara terbaik untuk mengamankan akun AWS. Berikut beberapa cara-caranya:
+- Amankan login dengan otentikasi multifaktor (MFA)
+- Hapus access key pengguna root akun
+- Membuat pengguna IAM individu dan memberikan izin sesuai dengan prinsip hak istimewa paling minim
+- Gunakan grup untuk menetapkan izin kepada pengguna IAM
+- Mengkonfigurasi kata sandi yang kuat
+- Delegasikan penggunaan peran, alih-alih pembagian kredensian
+- memantau aktifitas akun menggunakan AWS Cloud Trail
+
+## Bagian 4: Mengamankan akun
+
+- **AWS Organizations** adalah layanan manajemen akun yang memungkinkan pengguna untuk mengonsolidasikan beberapa akun AWS ke dalam organisasi yang dapat dikelola secara terpusat. Fitur keamanannya termasuk pengelompokan akun ke dalam unit organisasi (OU) dan melekatkan kebijakan akses yang berbeda untuk setiap OU. Ini memungkinkan pengguna untuk mengendalikan akses ke layanan AWS yang memenuhi persyaratan peraturan tertentu.
+
+- **AWS Organizations Terintegrasi dengan IAM**, yang memberikan kontrol lebih lanjut atas apa yang dapat dilakukan oleh pengguna dan peran dalam setiap akun. Izin diatur dengan mempertimbangkan kebijakan AWS Organizations dan kebijakan IAM.
+
+- **Service Control Policies (SCP)** dalam AWS Organizations memberikan kontrol pusat atas izin maksimum yang dapat dimiliki oleh akun anggota dalam organisasi. SCP memungkinkan pengguna untuk membatasi layanan AWS, sumber daya, dan tindakan yang dapat diakses oleh akun anggota, bahkan melampaui izin yang diberikan oleh administrator akun anggota.
+
+- **AWS Key Management Service (KMS)** adalah layanan yang memungkinkan pembuatan dan pengelolaan kunci enkripsi, serta mengontrol penggunaan enkripsi di layanan AWS. Kunci master pelanggan (CMK) digunakan untuk mengontrol akses ke data yang dienkripsi. AWS KMS menggunakan modul keamanan perangkat keras (HSM) yang divalidasi untuk melindungi kunci.
+
+- **Amazon Cognito** adalah solusi untuk akses kontrol ke sumber daya AWS dari aplikasi. Ini memungkinkan definisi peran dan pemetaan pengguna ke peran yang berbeda, sehingga aplikasi hanya dapat mengakses sumber daya yang diizinkan untuk setiap pengguna. Amazon Cognito mendukung standar manajemen identitas seperti SAML 2.0.
+
+- **AWS Shield** adalah layanan perlindungan DDoS terkelola yang melindungi aplikasi yang berjalan di AWS. AWS Shield menyediakan deteksi yang selalu aktif dan mitigasi otomatis untuk berbagai jenis serangan DDoS. Ada dua tingkatan layanan: AWS Shield Standard (secara otomatis diaktifkan untuk semua pelanggan) dan AWS Shield Advanced (opsional dan berbayar, memberikan perlindungan tambahan terhadap serangan DDoS yang lebih canggih).
+
+## Bagian 5: Mengamankan data di AWS
+
+Enkripsi data adalah alat penting untuk melindungi data digital. Ini melibatkan mengkodekan data sehingga hanya dapat dibaca oleh pihak yang memiliki akses ke kunci rahasia yang diperlukan untuk mendekripsinya. AWS (Amazon Web Services) menyediakan berbagai metode enkripsi data dalam istirahat dan data dalam transit untuk melindungi data Anda.
+
+- Enkripsi Data dalam Istirahat:
+
+	- AWS memungkinkan Anda untuk membuat sistem file terenkripsi menggunakan Advanced Encryption Standard (AES)-256, yang mengenkripsi semua data dan metadata saat data berada dalam istirahat.
+	- AWS Key Management Service (KMS) memudahkan proses enkripsi dan dekripsi otomatis.
+
+- Enkripsi Data dalam Transit:
+
+	- Data dalam transit dienkripsi menggunakan Transport Layer Security (TLS) 1.2 dengan cipher AES-256. Sebelumnya, ini dikenal sebagai Secure Sockets Layer (SSL).
+	- AWS Certificate Manager memfasilitasi penyediaan, manajemen, dan penerapan sertifikat SSL/TLS untuk mengamankan komunikasi jaringan, termasuk lalu lintas HTTPS.
+
+- Pengendalian Akses Data di AWS:
+
+	- AWS menyediakan berbagai alat dan metode untuk mengelola dan mengontrol akses ke data di Amazon S3, termasuk:
+    1. Menggunakan Blokir Akses Publik untuk mencegah akses publik yang tidak diinginkan.
+    2. Menulis kebijakan IAM untuk mengatur akses berdasarkan pengguna atau peran.
+    3. Menulis kebijakan bucket untuk mengontrol akses ke seluruh bucket atau objek.
+    4. Mengatur access control list (ACL) pada bucket dan objek Anda jika diperlukan.
+    5. AWS Trusted Advisor dapat membantu dalam pemeriksaan izin bucket untuk mencegah akses global yang tidak diinginkan.
+
+Dengan langkah-langkah ini, Anda dapat memastikan bahwa data Anda di AWS aman saat berada dalam istirahat dan saat berpindah melalui jaringan, serta mengelola akses data dengan baik.
+
+## Bagian 6: Bekerja untuk memastikan kepatuhan
+
+Amazon Web Services (AWS) terlibat dengan badan penyertifikasi eksternal dan auditor independen untuk memberikan informasi yang memadai tentang kebijakan, proses, dan kontrol yang diterapkan dan dioperasikan oleh AWS. Program Kepatuhan AWS tersedia lengkap dengan berbagai sertifikasi layanan AWS, seperti ISO/IEC 27001:2013, yang membantu memenuhi tujuan kepatuhan. AWS juga menyediakan fitur keamanan dan perjanjian hukum untuk mendukung pelanggan dengan regulasi seperti HIPAA dan GDPR. AWS Config adalah layanan yang memungkinkan pelanggan mengakses, mengaudit, dan mengevaluasi konfigurasi sumber daya AWS mereka, sambil menyederhanakan audit kepatuhan, analisis keamanan, manajemen perubahan, dan pemecahan masalah operasional. AWS Artifact menyediakan dokumen keamanan dan kepatuhan AWS yang dapat digunakan oleh pelanggan untuk menunjukkan keamanan dan kepatuhan infrastruktur dan layanan AWS yang mereka gunakan, termasuk perjanjian seperti Perjanjian Rekanan Bisnis (BAA) yang diperlukan untuk HIPAA.
+
+## Bagian 7: Layanan keamanan dan sumber daya tambahan
+
+AWS Service Catalog memungkinkan organisasi untuk membuat dan mengelola katalog layanan IT yang disetujui untuk digunakan di lingkungan AWS, memfasilitasi penggunaan layanan IT yang telah disetujui dengan cepat. Amazon Macie adalah layanan keamanan yang menggunakan machine learning untuk mendeteksi dan melindungi data sensitif di AWS, memberikan pemantauan dan peringatan terkait akses dan perpindahan data. Amazon Inspector adalah layanan penilaian keamanan otomatis yang membantu mengidentifikasi eksposur, kerentanan, dan penyimpangan dalam aplikasi di AWS, sambil memberikan laporan penilaian mendetail. Amazon GuardDuty adalah layanan deteksi ancaman yang secara berkelanjutan memantau aktivitas mencurigakan dan perilaku tidak bertanggung jawab untuk melindungi akun dan beban kerja AWS dengan bantuan machine learning dan analisis data log. Semua layanan ini berkontribusi untuk mencapai tata kelola yang konsisten dan memenuhi persyaratan kepatuhan dalam lingkungan AWS.
