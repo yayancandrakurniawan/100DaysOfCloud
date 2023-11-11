@@ -1,0 +1,134 @@
+## Modul 5: Jaringan dan Penyampaian Konten
+
+## Modul ini membahas topik-topik berikut:
+- Dasar-dasar jaringan
+- Amazon Virtual Private Cloud (Amazon VPC)
+- Jaringan VPC
+- Keamanan VPC
+- Amazon Route 53
+- Amazon CloudFront
+
+## Bagian 1: Dasar-dasar jaringan
+
+ Jaringan memerlukan perangkat jaringan (seperti perute atau switch) untuk menghubungkan semua klien bersama-sama dan memungkinkan komunikasi antarklien. Setiap mesin klien dalam jaringan memiliki alamat Internet Protocol (IP) yang unik yang mengidentifikasinya. Alamat IP adalah label numerik dalam format desimal. Mesin mengonversi angka desimal ke format biner. Alamat IP 32 bit disebut sebagai alamat IPv4. Alamat IPv6, yang 128 bit, juga tersedia. Alamat IPv6 dapat menampung lebih banyak perangkat pengguna. Metode umum untuk mendeskripsikan jaringan adalah Classless Inter-Domain Routing (CIDR). Alamat CIDR dinyatakan sebagai berikut:
+ - Alamat IP (yang merupakan alamat pertama jaringan)
+ - Selanjutnya, karakter garis miring (/)
+ - Terakhir, nomor yang memberitahu Anda berapa banyak bit awalan perutean yang harus ditetapkan atau dialokasikan untuk pengidentifikasi jaringan
+
+Bit yang tidak tetap diperbolehkan untuk berubah. CIDR adalah cara untuk mengekspresikan grup alamat IP yang berturut-turut satu sama lain. Model Open Systems Interconnection (OSI) adalah model konseptual yang digunakanuntuk menjelaskan bagaimana data melalui jaringan. Model ini terdiri dari tujuh lapis dan menunjukkan protokol umum dan alamat yang digunakan untuk mengirim data pada setiap lapis. 
+
+## Bagian 2: Amazon VPC
+
+Amazon VPC adalah layanan yang memungkinkan Anda menyediakan bagian yang terisolasi secara logis dari AWS cloud (disebut virtual private cloud, atau VPC), tempat Anda dapat meluncurkan sumber daya AWS Anda. VPC dapat digunakan untuk mengisolasi sumber daya Anda dari sumber daya lainnya di AWS cloud, untuk meningkatkan keamanan, fleksibilitas, dan efisiensi.
+
+**Fitur-fitur VPC:**
+
+- Rentang alamat IP: Anda dapat memilih rentang alamat IP Anda sendiri untuk VPC dan subnet Anda. Ini memungkinkan Anda untuk mengontrol penggunaan alamat IP Anda dan untuk menyesuaikan konfigurasi jaringan Anda sesuai kebutuhan.
+- Subnet: Anda dapat membagi VPC menjadi satu subnet atau lebih. Subnet dapat diklasifikasikan sebagai publik atau privat. Subnet publik memiliki akses langsung ke internet publik, sedangkan subnet privat tidak.
+- Alamat IP: Setiap instans di VPC Anda mendapatkan alamat IP pribadi secara otomatis. Anda juga dapat meminta alamat IP publik untuk ditetapkan saat membuat instans. Alamat IP publik memungkinkan instans Anda untuk berkomunikasi dengan sumber daya di internet publik.
+- Alamat IP Elastis: Alamat IP Elastis adalah alamat IPv4 publik dan statis yang dirancang untuk komputasi cloud dinamis. Anda dapat mengaitkan alamat IP Elastis dengan antarmuka instans atau jaringan apa pun untuk VPC apa pun dalam akun Anda.
+- Antarmuka jaringan elastis: Antarmuka jaringan elastis adalah sebuah antarmuka jaringan virtual yang dapat Anda lampirkan atau lepaskan dari instans dalam VPC. Antarmuka jaringan elastis dapat digunakan untuk menghubungkan instans Anda ke sumber daya jaringan lainnya, seperti AWS Direct Connect atau AWS Site-to-Site VPN.
+- Tabel rute: Tabel rute berisi sekumpulan aturan (disebut rute) yang mengarahkan lalu lintas jaringan dari subnet Anda. Anda dapat menggunakan tabel rute untuk mengontrol bagaimana lalu lintas jaringan diarahkan dari subnet Anda ke sumber daya lain di AWS cloud, atau ke internet publik.
+
+**Keuntungan menggunakan VPC:**
+
+- Keamanan: VPC memungkinkan Anda untuk mengisolasi sumber daya Anda dari sumber daya lainnya di AWS cloud. Ini dapat membantu Anda meningkatkan keamanan sumber daya Anda dengan membatasi akses ke mereka.
+- Fleksibilitas: VPC memungkinkan Anda untuk menyesuaikan konfigurasi jaringan Anda sesuai kebutuhan. Anda dapat menggunakan VPC untuk membuat lingkungan pengembangan dan pengujian yang terisolasi dari lingkungan produksi Anda, atau untuk membuat aplikasi yang membutuhkan akses ke internet publik dan sumber daya internal.
+- Efisiensi: VPC dapat membantu Anda menghemat biaya dengan mengontrol penggunaan alamat IP Anda.
+
+**Contoh penggunaan VPC:**
+
+- Anda dapat menggunakan VPC untuk membuat lingkungan pengembangan dan pengujian yang terisolasi dari lingkungan produksi Anda. Ini dapat membantu Anda melindungi data dan aplikasi Anda dari akses yang tidak sah.
+- Anda dapat menggunakan VPC untuk membuat aplikasi yang membutuhkan akses ke internet publik dan sumber daya internal. Misalnya, Anda dapat menggunakan VPC untuk membuat aplikasi e-commerce yang dapat mengakses data pelanggan Anda dari internet publik dan database Anda dari sumber daya internal.
+- Anda dapat menggunakan VPC untuk membuat aplikasi yang membutuhkan tingkat keamanan yang tinggi. Misalnya, Anda dapat menggunakan VPC untuk membuat aplikasi pemerintah atau keuangan yang membutuhkan perlindungan dari ancaman keamanan.
+
+## Bagian 3: Jaringan VPC
+
+Amazon Virtual Private Cloud (VPC) adalah jaringan virtual yang Anda buat di AWS. VPC memungkinkan Anda mengontrol alamat IP, routing, dan keamanan jaringan Anda.
+
+**Ada beberapa opsi konektivitas yang tersedia untuk VPC Anda, termasuk:**
+
+- Gateway internet memungkinkan instans di VPC Anda untuk berkomunikasi dengan internet.
+- Gateway NAT memungkinkan instans di subnet privat VPC Anda untuk berkomunikasi dengan internet.
+- Peering VPC memungkinkan Anda menghubungkan dua VPC untuk memungkinkan lalu lintas di antara keduanya.
+- AWS Direct Connect memungkinkan Anda membuat koneksi jaringan pribadi antara jaringan Anda dan AWS.
+- Endpoint VPC memungkinkan Anda menghubungkan VPC Anda ke layanan AWS tertentu.
+
+AWS Transit Gateway adalah layanan yang memungkinkan Anda menyederhanakan konektivitas VPC Anda. Transit Gateway bertindak sebagai hub yang menghubungkan VPC, pusat data on-premise, dan jaringan lainnya.
+
+Kelebihan menggunakan Transit Gateway:
+
+Simplifikasi manajemen: Anda hanya perlu membuat dan mengelola satu koneksi dari Transit Gateway ke setiap jaringan yang ingin Anda hubungkan.
+Pengurangan biaya: Transit Gateway dapat membantu Anda mengurangi biaya jaringan dengan mengurangi jumlah koneksi yang Anda butuhkan.
+Peningkatan skalabilitas: Transit Gateway dapat membantu Anda menskalakan jaringan Anda dengan mudah saat Anda berkembang.
+
+## Bagian 4: Keamanan VPC
+
+Amazon Virtual Private Cloud (VPC) menyediakan kontrol penuh atas lalu lintas masuk dan keluar. Ada dua opsi firewall VPC yang dapat Anda gunakan untuk mengamankan VPC:
+
+- Grup keamanan bertindak sebagai firewall virtual bagi instans, serta mengontrol lalu lintas masuk dan keluar. Grup keamanan bertindak pada tingkat instans, bukan tingkat subnet.
+- Access control list jaringan (ACL jaringan) adalah lapis keamanan opsional untuk VPC Anda. Ini bertindak sebagai firewall untuk mengendalikan lalu lintas masuk dan keluar dari satu subnet atau lebih.
+
+**Grup keamanan**
+
+Grup keamanan memiliki aturan yang mengontrol lalu lintas masuk dan keluar. Saat Anda membuat grup keamanan, grup tersebut tidak memiliki aturan masuk. Oleh karena itu, tidak ada lalu lintas masuk yang berasal dari host lainnya ke instans Anda yang diizinkan, hingga Anda menambahkan aturan masuk ke grup keamanan. Secara default, grup keamanan mencakup aturan keluar yang mengizinkan semua lalu lintas keluar. Anda dapat menghapus aturan dan menambahkan aturan keluar yang hanya mengizinkan lalu lintas keluar tertentu saja. Jika grup keamanan Anda tidak memiliki aturan keluar, lalu lintas keluar yang bersumber dari instans Anda tidak ada yang diizinkan.
+
+Grup keamanan stateful, yang berarti bahwa informasi status disimpan bahkan setelah permintaan diproses. Karena itu, jika Anda mengirim permintaan dari instans Anda, lalu lintas respons untuk permintaan itu diizinkan masuk, terlepas dari aturan masuk grup keamanan. Respons terhadap lalu lintas masuk yang diizinkan tersebut diizinkan untuk keluar, terlepas dari aturan lalu lintas keluarnya.
+
+Ketika Anda membuat grup keamanan kustom, Anda dapat menentukan aturan izinkan, tetapi tidak untuk aturan tolak. Semua aturan dievaluasi sebelum keputusan untuk mengizinkan lalu lintas.
+
+**ACL jaringan**
+
+ACL jaringan memiliki aturan masuk dan keluar yang terpisah, dan setiap aturan dapat mengizinkan atau menolak lalu lintas. Secara otomatis, VPC Anda dilengkapi dengan ACL jaringan default yang dapat diubah. Secara default, VPC mengizinkan semua lalu lintas IPv4 masuk dan keluar dan, jika berlaku, lalu lintas IPv6.
+
+ACL jaringan stateless, yang berarti bahwa tidak ada informasi tentang permintaan yang dikelola setelah permintaan diproses. Anda dapat membuat ACL jaringan kustom dan mengaitkannya dengan subnet. Secara default, setiap ACL jaringan kustom menolak semua lalu lintas masuk dan keluar sampai Anda menambahkan aturan.
+
+ACL jaringan berisi daftar aturan bernomor yang dievaluasi secara berurutan, dimulai dengan aturan bernomor terendah. Tujuannya adalah untuk menentukan apakah lalu lintas diperbolehkan masuk atau keluar dari setiap subnet yang terkait dengan ACL jaringan
+
+## Bagian 5: Amazon Route 53
+
+Amazon Route 53 adalah layanan web Domain Name System (DNS) cloud yang dapat diskalakan dan sangat tersedia. Amazon Route 53 dirancang untuk memberikan cara yang andal dan hemat biaya pada developer dan bisnis untuk merutekan pengguna ke aplikasi internet dengan menerjemahkan nama (seperti www.example.com) ke alamat IP numerik (seperti 192.0.2.1) yang digunakan komputer untuk terhubung satu sama lain. Selain itu, Amazon Route 53 sepenuhnya sesuai dengan IPv6.
+
+**Fitur utama Amazon Route 53:**
+
+- Registrasi nama domain: Anda dapat membeli dan mengelola nama domain (seperti example.com), dan Amazon Route 53 akan mengonfigurasi pengaturan DNS secara otomatis untuk domain Anda.
+- Perutean DNS: Anda dapat menggunakan Amazon Route 53 untuk merutekan lalu lintas ke sumber daya yang berbeda, baik di dalam AWS maupun di luar AWS. Anda dapat menggunakan berbagai jenis kebijakan perutean untuk merutekan lalu lintas, termasuk:
+
+- Perutean sederhana
+- Perutean weighted round robin
+- Perutean latensi
+- Perutean geolokasi
+- Perutean kedekatan geografis
+- Perutean failover
+- Perutean jawaban multinilai
+
+- Pemeriksaan kesehatan DNS: Anda dapat menggunakan pemeriksaan kesehatan DNS untuk memantau kesehatan sumber daya Anda dan memastikan bahwa lalu lintas hanya dirutekan ke sumber daya yang sehat.
+
+Kasus penggunaan Amazon Route 53:
+
+- Deployment multiwilayah: Amazon Route 53 memungkinkan Anda untuk membuat arsitektur multiwilayah yang sangat tersedia untuk aplikasi Anda. Dengan Amazon Route 53, pengguna secara otomatis diarahkan ke load balancerElastic Load Balancing yang paling dekat dengan pengguna.
+- Failover DNS: Amazon Route 53 memungkinkan Anda untuk mengonfigurasi failover DNS untuk aplikasi Anda. Jika sumber daya aplikasi Anda mengalami kegagalan, Route 53 akan secara otomatis mengalihkan lalu lintas ke sumber daya cadangan.
+
+## Bagian 6: Amazon CloudFront
+
+Amazon CloudFront adalah layanan CDN (Content Delivery Network) yang disediakan oleh AWS. CDN adalah jaringan server cache yang didistribusikan secara global untuk mempercepat pengiriman konten web, video, aplikasi, dan API kepada pengguna di seluruh dunia.
+
+Amazon CloudFront menggunakan jaringan global edge location dan cache edge Regional untuk mengirimkan konten. Edge location adalah lokasi CloudFront yang di-deploy secara global dan dekat dengan pengguna. Cache edge Regional adalah lokasi CloudFront yang juga di-deploy secara global, tetapi memiliki cache yang lebih besar daripada edge location individu.
+
+**Manfaat menggunakan Amazon CloudFront antara lain:**
+
+- Cepat dan global: Amazon CloudFront dapat mengirimkan konten dengan latensi rendah ke pengguna di seluruh dunia.
+- Keamanan di edge: Amazon CloudFront menyediakan perlindungan tingkat jaringan dan tingkat aplikasi untuk konten Anda.
+- Dapat diprogram sepenuhnya: Amazon CloudFront dapat dikustomisasi untuk memenuhi kebutuhan aplikasi tertentu.
+- Terintegrasi secara mendalam dengan AWS: Amazon CloudFront terintegrasi dengan layanan AWS lain, sehingga Anda dapat memanfaatkan manfaat AWS lainnya.
+- Hemat biaya: Amazon CloudFront hemat biaya karena tidak memiliki komitmen minimum dan biaya Anda hanya untuk apa yang Anda pakai.
+
+**Beberapa istilah penting dalam teks di atas:**
+
+- CDN (Content Delivery Network): Jaringan server cache yang didistribusikan secara global untuk mempercepat pengiriman konten web, video, aplikasi, dan API kepada pengguna di seluruh dunia.
+- Edge location: Lokasi CloudFront yang di-deploy secara global dan dekat dengan pengguna.
+- Cache edge Regional: Lokasi CloudFront yang juga di-deploy secara global, tetapi memiliki cache yang lebih besar daripada edge location individu.
+- Transfer data keluar: Volume data yang ditransfer keluar dari edge location Amazon CloudFront, diukur dalam GB, ke internet atau ke asal Anda (server asal AWS maupun server asal lainnya).
+- Permintaan HTTP(S): Jumlah permintaan HTTP(S) yang dibuat ke Amazon CloudFront untuk konten Anda.
+- Permintaan pembatalan validasi: Permintaan untuk membatalkan validasi objek dari cache CloudFront.
+- Secure Sockets Layer (SSL) kustom IP khusus: Sertifikat SSL kustom yang dikaitkan dengan satu atau lebih distribusi CloudFront yang menggunakan versi IP Khusus dari dukungan sertifikat SSL kustom.
