@@ -31,7 +31,7 @@ We have provided a sample Day Journey entry staring at 0. You can delete this ex
 - [ ] ☁️ 2 > [2](Journey/002/Cloud%20Foundation%20Chapter%202%20dan%203)
 - [ ] ☁️ 3 > [3](Journey/003/Lab%201%20AWS%20IAM)
 - [ ] ☁️ 4 > [4](Journey/004/Chapter%204%20Modul%204)
-- [ ] ☁️ 5 > [](Journey/005/Readme.md)
+- [ ] ☁️ 5 > [](Journey/005/CHAPTER%205%20MODUL%205)
 - [ ] ☁️ 6 > [](Journey/006/Readme.md)
 - [ ] ☁️ 7 > [](Journey/007/Readme.md)
 - [ ] ☁️ 8 > [](Journey/008/Readme.md)
