@@ -33,10 +33,10 @@ We have provided a sample Day Journey entry staring at 0. You can delete this ex
 - [ ] ☁️ 4 > [4](Journey/004/Chapter%204%20Modul%204)
 - [ ] ☁️ 5 > [5](Journey/005/CHAPTER%205%20MODUL%205)
 - [ ] ☁️ 6 > [6](Journey/006/Readme.md)
-- [ ] ☁️ 7 > [](Journey/007/Readme.md)
-- [ ] ☁️ 8 > [](Journey/008/Readme.md)
-- [ ] ☁️ 9 > [](Journey/009/Readme.md)
-- [ ] ☁️ 10 > [](Journey/010/Readme.md)
+- [ ] ☁️ 7 > [7](Journey/007/Readme.md)
+- [ ] ☁️ 8 > [8](Journey/008/Readme.md)
+- [ ] ☁️ 9 > [9](Journey/009/Readme.md)
+- [ ] ☁️ 10 > [10](Journey/010/Readme.md)
 
 ## Walking down the road
 
